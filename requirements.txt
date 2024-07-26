@@ -1,4 +1,4 @@
-openai
 pandas
+openai
 sqlite3
 streamlit
