@@ -8,8 +8,8 @@ from openai import OpenAI
 # Show title and description.
 st.title("Elite Chat Bot with Document(V1)")
 st.write(
-    "Upload the document below and ask a question about it – GPT will answer! "
-    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
+    "Hello, this is our new app you can chat with! Please upload the csv document of ranks below and ask questions about it."
+    "Currently, to use this app, you need to fill in the API key I provided. Please don't use your own API key because it may bring bugs ;( "
 )
 
 # Ask user for their OpenAI API key via `st.text_input`.
