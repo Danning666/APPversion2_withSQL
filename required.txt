@@ -1,0 +1,4 @@
+openai
+pandas
+sqlite3
+streamlit
