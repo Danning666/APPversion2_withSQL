@@ -108,7 +108,7 @@ else:
             def api_call():
                 structure_str = ', '.join([f"{col} ({dtype})" for col, dtype in table_structure.items()])
                 prompt = (f"Based on the following question and table structure, generate a pure SQL query. Note that column names such as '2005' should be enclosed in quotes."
-                        f"Table name: excel_data. It contains countries rank data. Table structure: {structure_str}. Question: {question}"
+                        f"This Table is regarding ranks. So, larger number means worse performance. Table name: excel_data. Table structure: {structure_str}. Question: {question}"
                         f"Do not include any extra characters or markdown, only return the SQL code. ")
                 response = client.chat.completions.create(
                     model="deepseek-chat",
