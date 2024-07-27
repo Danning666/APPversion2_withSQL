@@ -62,7 +62,7 @@ else:
 
 
         # Function to handle API calls with retry mechanism
-        def call_openai_with_retry(call_function, max_retries=3, delay=5):
+        def call_openai_with_retry(call_function, max_retries=30, delay=50):
             """
             General API call function with retry mechanism
             """
