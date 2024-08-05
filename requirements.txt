@@ -3,3 +3,4 @@ openai
 streamlit
 s3fs
 st-files-connection
+streamlit-authenticator
