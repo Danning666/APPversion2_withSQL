@@ -14,7 +14,7 @@ st.write(
 
 # Ask user for their OpenAI API key via `st.text_input`.
 #openai_api_key = st.text_input("OpenAI API Key", type="password")
-openai_api_key = current_key
+openai_api_key =  st.secrets["current_key"]
 if not openai_api_key:
     st.info("Please add your OpenAI API key to continue.", icon="🗝️")
 else:
