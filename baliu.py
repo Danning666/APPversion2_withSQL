@@ -89,9 +89,9 @@ else:
         Generate SQL query using OpenAI API based on the question and table structure
         """
         structure_str = ', '.join([f"{col} ({dtype})" for col, dtype in table_structure.items()])
-        prompt = (f"{sysprompt}Based on the following question and table structure, generate a pure SQL query. Note that column names such as '2005' should be enclosed in quotes."
+        prompt = (f"{sysprompt}Based on the following question and table structure, generate a pure SQL query. Make sure to extract as much as possible information in the query For example, when asked about certain countries performance, please take the countries ranks data of all index levels. Note that column names such as '2005' should be enclosed in quotes."
                 f"This Table is regarding ranks. So, larger number means worse performance. Table name: excel_data. Table structure: {structure_str}. Question: {question}"
-                f"Please only produce one SQL query and make sure to extract as much as possible information in the query. For example, when asked about certain countries performance, please take the countries ranks data of all index levels. Do not include any extra characters or markdown, only return one clean SQL code. ")
+                f"Please only produce one SQL query.Do not include any extra characters or markdown, only return one clean SQL code. ")
         response = client.chat.completions.create(
             model="deepseek-chat",
             messages=[
