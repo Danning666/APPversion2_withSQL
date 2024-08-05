@@ -137,7 +137,7 @@ else:
         """
         if result is not None:
             result_str = str(result)
-            prompt = f"{sysprompt}Now, according to the SQL result data: {result_str}, produce an answer to this question: {question}."
+            prompt = f"{sysprompt}Now, according to the SQL result data: {result_str}, produce an insightful answer to this question: {question}."
         else:
             document = df.to_string(index=False)
             prompt = f"{question}. You have data as followed: {document}"
