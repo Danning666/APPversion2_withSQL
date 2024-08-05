@@ -62,7 +62,7 @@ else:
     # Get the table structure
     table_structure = get_table_structure()
 
-    sysprompt = pd.read_csv("/Users/njyzlzf/Documents/Elite/Doc/prompt0805.txt")
+    sysprompt = pd.read_csv("pbaliu.txt")
     question = st.text_area(
         "Now ask a question please",
         placeholder="For example: According to the excel of Country ranks, which 10 countries were the worst in 2020?",
