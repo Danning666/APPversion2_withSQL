@@ -61,6 +61,7 @@ else:
 
     # Get the table structure
     table_structure = get_table_structure()
+    print(table_structure)
 
     sysprompt = pd.read_csv("pbaliu.txt")
     question = st.text_area(
