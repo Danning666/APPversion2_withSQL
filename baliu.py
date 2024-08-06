@@ -92,7 +92,7 @@ else:
         structure_str = ', '.join([f"{col} ({dtype})" for col, dtype in table_structure.items()])
         prompt = (f"{sysprompt}Based on the following question and table structure, generate a pure SQL query. Make sure to extract as much as possible information in the query For example, when asked about certain countries performance, please take the countries ranks data of all index levels. Note that column names such as '2005' should be enclosed in quotes."
                 f"This Table is regarding ranks. So, larger number means worse performance. Table name: excel_data. Table structure: {structure_str}. Question: {question}"
-                f"Please use the right columns name and only produce one SQL query.Do not include any extra characters or markdown, only return one clean SQL code. Please note that columns names are like 'Country Name', not 'Country_Name'. ")
+                f"# Please be careful about columns names, note that columns names are like 'Country Name', not 'Country_Name'. Don't use a '_' in columns names. Please only produce one SQL query.Do not include any extra characters or markdown, only return one clean SQL code.  ")
         response = client.chat.completions.create(
             model="deepseek-chat",
             messages=[
