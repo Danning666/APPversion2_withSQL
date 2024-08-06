@@ -138,7 +138,7 @@ else:
         """
         if result is not None:
             result_str = str(result)
-            prompt = f"{sysprompt}Now, according to the SQL result data: {result_str}, analyze it and produce an insightful answer to this question: {question}."
+            prompt = f"{sysprompt}Now, according to the SQL result data: {result_str}, analyze it and produce an insightful answer to this question: {question}. Please describe only integers, without any decimals, because this is a ranking dataset."
         else:
             document = df.to_string(index=False)
             prompt = f"{question}. You have data as followed: {document}"
