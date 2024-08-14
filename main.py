@@ -26,8 +26,8 @@ if "question_type" not in st.session_state:
     st.session_state.question_type = None
 
 # prepare the API
-#openai_api_key =  st.secrets["current_key"]
-openai_api_key =  current_key
+openai_api_key =  st.secrets["current_key"]
+
 if not openai_api_key:
     st.info("Can't read the pre-stored key. Please add your own OpenAI API key to continue.", icon="🗝️")
     openai_api_key = st.text_input("OpenAI API Key", type="password")
