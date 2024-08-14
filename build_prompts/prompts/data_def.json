@@ -1,0 +1,47 @@
+{
+  "Level1": {
+    "PEQx": "PEQx is a political economy index that measures the behavior of national elites and economic patterns, which is derived through two main sub-indexes at Level 2."
+  },
+  "Level2": {
+    "Sub-Index": {
+      "I": "Power, Focuses on measuring the distribution and use of power within a country, especially how power is used to support or hinder rent-seeking behavior.",
+      "II": "Value, In contrast to the Power Sub-Index, the Value Sub-Index measures the degree of value creation and value extraction."
+    },
+    "Index Area": {
+      "i": "Political Power, Focuses on how power within the political system is used to support or hinder specific economic behaviors.",
+      "ii": "Political Value, Assesses how policy decisions affect the redistribution of wealth among different social strata and how these policies promote or inhibit value creation.",
+      "iii": "Economic Power, Analyzes the dominant forces in the market, such as industries or enterprises, and how they affect the economic structure and competition.",
+      "iv": "Economic Value, Measures value creation and extraction activities in the labor market, product and service market, and capital market."
+    }
+  },
+  "Level3": {
+    "Pillar": {
+         "i.1":{"State Capture":"This pillar not only assesses phenomena such as political corruption but also delves into how political alliances influence the decision-making process of state institutions through various means, including but not limited to political donations and lobbying activities. It reveals the extensive impact of political corruption on policy formulation, resource allocation, and government efficiency, as well as how these corrupt behaviors undermine the public interest and fair competition."
+        },
+          "i.2":{"Regulatory Capture":"This pillar measures how specific interest groups shape business rules and regulatory systems by influencing policymakers, regulatory agencies, or the legislative process. It focuses on the transparency and fairness of regulatory decisions and the existence of manipulation by specific groups to gain undue competitive advantages, thereby assessing the soundness of the regulatory system and the fairness of market operations."
+          },
+          "i.3":{"Human Capital Capture":"This pillar focuses on analyzing how labor and civil servant alliances use their influence within the political system to improve or maintain the interests of their members, including but not limited to wage levels, working conditions, and employment security. It reveals how labor market rules are utilized by specific groups and the potential impact of this utilization on the entire economy and society."
+          },
+
+          "ii.1":{"Industry Dominance":"This pillar measures the market control of leading industries by assessing industry diversity and market concentration. It focuses on the influence of industry leaders on the market and how this control affects market competition, innovation, and consumer choice."
+                    },
+          "ii.2":{"Corporate Dominance":"This pillar assesses the power of individual enterprises in the economy, especially how they gain market advantages through scale, resources, or policy support. For example, the Anti-Trust Exemption (ATX, ii.5) indicator reveals how enterprises use policy loopholes to consolidate their market position."
+                    },
+          "ii.3":{"Creative Destruction":"This pillar uses indicators such as entrepreneurial activity and venture capital investment to measure innovation and transformative pressure in the economy. It focuses on the emergence of new enterprises and the elimination of old ones in the economy and how this process drives technological progress and industrial upgrading."
+                     },
+          "iii.1":{"Revenue Provision":"This pillar measures how the government uses public finance, especially the efficiency and effectiveness of the government in providing public goods such as education, health, and infrastructure. It focuses on how government spending promotes social welfare and economic development."
+      },
+          "iii.2":{"Revenue Acquisition":"This pillar assesses how the state collects revenue through tax policies and other means, as well as the impact of these policies on individuals and enterprises. It also focuses on the value of life, such as measuring social safety and public health through indicators like the homicide rate (iii.8_HOM)"
+    },
+          "iii.3":{"Non-Labor Income":"This pillar focuses on the impact of the use of natural resources and government debt on the future, assessing how these factors affect the sustainable development of the economy and the well-being of future generations."
+    },
+          "iv.1":{"Producer Rents":"This pillar estimates the excess profits obtained by producers and suppliers in the goods and services market through market power or policy support. It focuses on how market structure and competition policy affect prices and profits."
+      },
+          "iv.2":{"Capital Rents":"This pillar measures how financial market participants, including enterprises and individuals, obtain rents through capital markets, including direct financial transactions and indirect financial products."
+    },
+          "iv.3":{"Labor Rents":"This pillar assesses rents in the labor market through indicators such as unemployment rates and gender wage gaps, revealing structural issues in the labor market and unequal distribution of labor."
+}
+      }
+      },
+  "Level4": "Indicators"
+}

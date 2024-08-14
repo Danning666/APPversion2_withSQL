@@ -1,0 +1,60 @@
+{
+    "background_information": "The dataset records ranks of countries at different elite quality levels. Ranks were based on scores calculated through a hierarchical tree structure, encompassing 151 countries. The data only contains the ranks, no original scores data.",
+    "hierarchical_structure": {
+      "level_1": "A PEQx score is calculated for each country, and the rank of 'PEQx' is the most important.",
+      "level_2": "The score of PEQx is derived from the values of 'Sub-Index', while 'Sub-Index' was derived from 2*2 'Index Area'.",
+      "level_3": "The scores of 'Index Area' are calculated from the values of 'Pillar'.",
+      "level_4": "'Pillar' values are derived from 'Indicator' values. A country's ranks of each level are calculated based on the scores."
+    },
+    "dataset_description": {
+      "index_levels": {
+        "PEQx": "Highest index level for each country.",
+        "Sub_Index": "Level 2, below PEQx.",
+        "Index_Area": "Also Level 2, but below Sub-Index. Specific areas contributing to the Sub-Index.",
+        "Pillar": "Contributing to each Index Area.",
+        "Indicator": "Detailed metrics contributing to each Pillar."
+      },
+      "column_names": [
+        "Country Name",
+        "Country Code",
+        "Index Level",
+        "Index Element Code",
+        "Index Element Name",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ], 
+    "example_row1": {
+      "PEQx Level": [
+        {"Australia,AUS,PEQx,PEQx,PEQx,52.906,52.906,52.893,51.923,50.719,51.41,52.793,53.638,57.133,53.876,53.66,55.322,56.886,55.08,55.924,57.318,54.402,54.219,52.602,53.982 \n"
+          }
+        },
+    "example_row2": {
+      "PEQx Level": [
+        {"Australia,AUS,PEQx,PEQx,PEQx,52.906,52.906,52.893,51.923,50.719,51.41,52.793,53.638,57.133,53.876,53.66,55.322,56.886,55.08,55.924,57.318,54.402,54.219,52.602,53.982 \n"
+          }
+        },
+        // ... (other countries at PEQx level)
+      ],
+      // ... (Index Area Level, Pillar Level, Indicator Level with similar structure)
+    },
+    "important_note": "Please always remember, the data only contains the ranks, no original score data."
+  }
+}
