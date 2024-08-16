@@ -75,7 +75,7 @@ def generate_answer_with_openai(client,question, result=None):
     if result is not None:
         result_str = str(result[0])
         sql_query = str(result[1])
-        prompt = f"with knowdelge base: {document}. Now, for SQL query {sql_query}, we have result data: {result_str}. Please describe only integers, without any decimals, because this is a ranking dataset. Remember, smaller number of rank means better performance. Please make deep analysis of the result , instead of simply representing it, and produce an insightful answer to this question: {question}. "
+        prompt = f"with knowdelge base: {document}. Now, for SQL query {sql_query}, we have result data: {result_str}. Noting that it is all about rank, Please only use integers while answering. for example, say 'a country's ranks 10th', don't say 'a country ranks 10.0'. Remember, smaller rank means better performance. Please make deep analysis of the result , instead of simply representing it, and produce an insightful answer to this question: {question}. "
     else:
         prompt = f"{question}. You have data as followed: {document}"
 
