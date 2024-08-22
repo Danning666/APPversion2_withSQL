@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import main,authen_test
+from authen_test import app
 
 
 st.set_page_config(
