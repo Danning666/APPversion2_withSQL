@@ -76,7 +76,7 @@ def app():
             sql_query = str(result[1])
             prompt = f"with knowdelge base: {document}. Now, for SQL query {sql_query}, we have result data: {result_str}. Please describe only integers, without any decimals, because this is a ranking dataset. Remember, smaller number of rank means better performance. Please make deep analysis of the result , instead of simply representing it, and produce an insightful answer to this question: {question}. "
         else:
-            prompt = f"{question}. You have data as followed: {document}"
+            prompt = f"{document}. Now,  {question} Please always provide answer using PEQx's level structure."
 
         response = client.chat.completions.create(
             model="deepseek-chat",
