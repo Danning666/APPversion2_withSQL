@@ -28,7 +28,8 @@ def app():
         st.session_state.question_type = None
 
     # prepare the API
-    #openai_api_key =  st.secrets["current_key"]
+    openai_api_key =  st.secrets["openai_api_key"]
+    current_key =  st.secrets["current_key"]
 
     if not openai_api_key:
         st.info("Can't read the pre-stored key. Please add your own OpenAI API key to continue.", icon="🗝️")
