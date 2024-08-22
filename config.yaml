@@ -1,0 +1,13 @@
+cookie:
+  expiry_days: 1
+  key: dan_key
+  name: dan
+credentials:
+  usernames:
+    dan:
+      email: dan
+      name: dan
+      password: $2b$12$iboTavHMnNYMi7E1MCueMepTfcO9CDuBYgRNHc4mRMBPEsyQYo0t2
+preauthorized:
+  emails:
+  - fake@qq.com
