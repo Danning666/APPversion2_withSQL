@@ -4,3 +4,4 @@ streamlit
 s3fs
 st-files-connection
 streamlit-authenticator
+authen_test
