@@ -29,8 +29,8 @@ def app():
 
     # prepare the API
 
-    client = OpenAI(api_key= current_key, base_url="https://api.deepseek.com")
-    OA_client = OpenAI(api_key=openai_api_key)
+    client = OpenAI(api_key= st.secrets["current_key"], base_url="https://api.deepseek.com")
+    OA_client = OpenAI(api_key=st.secrets["openai_api_key"])
 
     # Prepare the data
     conn0 = st.connection('s3', type=FilesConnection)
