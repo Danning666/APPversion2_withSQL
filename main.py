@@ -28,12 +28,7 @@ def app():
         st.session_state.question_type = None
 
     # prepare the API
-    openai_api_key =  st.secrets["openai_api_key"]
-    current_key =  st.secrets["current_key"]
 
-    if not openai_api_key:
-        st.info("Can't read the pre-stored key. Please add your own OpenAI API key to continue.", icon="🗝️")
-        openai_api_key = st.text_input("OpenAI API Key", type="password")
     client = OpenAI(api_key= current_key, base_url="https://api.deepseek.com")
     OA_client = OpenAI(api_key=openai_api_key)
 
