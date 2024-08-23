@@ -67,7 +67,7 @@ def app():
         if result is not None:
             result_str = str(result[0])
             sql_query = str(result[1])
-            prompt = f"with knowdelge base: {document}. Now, for SQL query {sql_query}, we have result of rank: {result_str}. This data is rank data, so please describe only integers, without any decimals. Remember, smaller number of rank means better performance. Please make deep analysis of the rank result , instead of simply representing it, and produce an insightful and nicely structured answer to this question: {question}. "
+            prompt = f"with knowdelge base: {document}. Now, for SQL query {sql_query}, we have result of rank: {result_str}. This data is rank data, so please describe only integers and never mention the word 'score'. Remember, smaller number of rank means better performance. Please make deep analysis of the rank result , instead of simply representing it, and produce an insightful and nicely structured answer to this question: {question}. "
         else:
             prompt = f"{document}. Based on that, {question}"
         print('response generating starts')
