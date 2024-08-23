@@ -32,13 +32,6 @@ def app():
     client = OpenAI(api_key= st.secrets["current_key"], base_url="https://api.deepseek.com")
     OA_client = OpenAI(api_key=st.secrets["openai_api_key"])
 
-    # Prepare the data
-    conn0 = st.connection('s3', type=FilesConnection)
-    df = conn0.read("elitestreamlitdanning/ranks_cut1.csv", input_format="csv", ttl=600)
-    # st.write("Data fetched successfully!")
-
-
-
     # Get user question
     question = st.text_area(
         "Now ask a question please",
@@ -74,11 +67,12 @@ def app():
         if result is not None:
             result_str = str(result[0])
             sql_query = str(result[1])
-            prompt = f"with knowdelge base: {document}. Now, for SQL query {sql_query}, we have result data: {result_str}. Please describe only integers, without any decimals, because this is a ranking dataset. Remember, smaller number of rank means better performance. Please make deep analysis of the result , instead of simply representing it, and produce an insightful answer to this question: {question}. "
+            prompt = f"with knowdelge base: {document}. Now, for SQL query {sql_query}, we have result of rank: {result_str}. This data is rank data, so please describe only integers, without any decimals. Remember, smaller number of rank means better performance. Please make deep analysis of the rank result , instead of simply representing it, and produce an insightful and nicely structured answer to this question: {question}. "
         else:
-            prompt = f"{document}. Now,  {question} Please always provide answer using PEQx's level structure."
+            prompt = f"{document}. Based on that, {question}"
+        print('response generating starts')
 
-        response = client.chat.completions.create(
+        stream1 = client.chat.completions.create(
             model="deepseek-chat",
             messages=[
                 {
@@ -87,10 +81,10 @@ def app():
                 },
                 {"role": "user", "content": "."},
             ],
-            stream=False,
+            stream=True,
         )
 
-        response2 = OA_client.chat.completions.create(
+        stream2 = OA_client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {
@@ -99,9 +93,9 @@ def app():
                 },
                 {"role": "user", "content": "."},
             ],
-            stream=False,
+            stream=True,
         )
-        return response.choices[0].message.content, response2.choices[0].message.content, 
+        return stream1, stream2
 
 
 
@@ -113,9 +107,10 @@ def app():
         # question_type = classify_question_with_openai(question)
         # if st.session_state.question_type == "yes":
         if genre == ":rainbow[withSQL]":
-            conn=qf.Data_Base_Establish(df)
-            sql_query = qf.generate_sql_query_with_openai(question, client,conn,sysprompt)
-            result = qf.execute_sql_query(sql_query,conn)
+            df1=qf.load_data_from_s3()
+            conn1 = qf.Data_Base_Establish(df1)
+            sql_query = qf.generate_sql_query_with_openai(question, OA_client,conn1,sysprompt)
+            result = qf.execute_sql_query(sql_query,conn1)
             answer11, answer22 = generate_answer_with_openai(client,OA_client, question, result)
         else:
             answer11, answer22 = generate_answer_with_openai(client, OA_client, question)
@@ -138,12 +133,15 @@ def app():
 
             with col1:
                 st.title('Claude')
-                st.write(answer1)
+                st.write_stream(answer1)
 
 
             with col2:
                 st.title('OpenAI')
-                st.write(answer2)
+                st.write_stream(answer2)
+            
+
+
             
 
 
