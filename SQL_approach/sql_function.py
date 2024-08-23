@@ -33,6 +33,12 @@ def Data_Base_Establish(df):
         print(f"An error occurred while checking the table: {e}")
     return conn
 
+# Prepare the data
+@st.cache_data
+def load_data_from_s3():
+    conn0 = st.connection('s3', type=FilesConnection)
+    df = conn0.read("elitestreamlitdanning/ranks_cut1.csv", input_format="csv", ttl=600)
+    return df
 
 
 def get_table_structure(conn):
@@ -41,6 +47,8 @@ def get_table_structure(conn):
     columns = cursor.fetchall()
     table_structure = {column[1]: column[2] for column in columns}  # Dictionary format: {column_name: data_type}
     return table_structure
+
+
 
 
 
