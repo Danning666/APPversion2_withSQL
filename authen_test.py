@@ -16,7 +16,7 @@ def app():
 
     with open('config.yaml', 'r', encoding='utf-8') as file:
         config = yaml.load(file, Loader=SafeLoader)
-        print(config)
+        # print(config)
 
 
     authenticator = stauth.Authenticate(
